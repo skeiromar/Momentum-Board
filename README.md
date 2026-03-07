@@ -92,10 +92,9 @@ Use this workflow when you want to turn this repository into your own product in
 
 ```
 src/
-├── client/                 # Frontend React application
-│   ├── components/
-│   │   ├── data/          # Redux store, reducers, and actions
-│   │   └── ui/            # Reusable UI components
+├── client/                # Frontend React application
+│   ├── data/              # Redux store, reducers, and actions
+│   │── ui/                # Reusable UI components
 │   ├── pages/             # Page components (Home, About, etc.)
 │   ├── shared/            # Client-side utilities and constants
 │   ├── styles/            # CSS files

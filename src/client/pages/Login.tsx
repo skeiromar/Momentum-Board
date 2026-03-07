@@ -8,8 +8,8 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { Field } from '@chakra-ui/react';
-import { PageLayout } from '../components/layout/page-layout';
-import { PageMeta } from '../components/ui/page-meta';
+import { PageLayout } from '../layout/page-layout';
+import { PageMeta } from '../ui/page-meta';
 import { API_PATHS } from '../shared/constants';
 import { getCsrfToken } from '../shared/csrf';
 

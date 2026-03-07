@@ -32,7 +32,7 @@
 - Use Chakra UI for all UI components.
 - Follow the MVC pattern on the server (routes → controllers → services).
 - Redux for global state; `useState`/`useReducer` for component-local state.
-- See `src/client/components/data/README.md` for state management patterns.
+- See `src/client/data/README.md` for state management patterns.
 - See `src/client/hooks/README.md` for custom hook patterns.
 - Client and server `shared/` directories are separate — do not share code between them.
 

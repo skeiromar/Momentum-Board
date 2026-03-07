@@ -29,13 +29,12 @@ Express Server (vite-express)
 
 ```
 src/
-├── client/                    # Frontend (React SPA)
+├── client/                   # Frontend (React SPA)
 │   ├── main.tsx              # Entry: providers (Chakra, Redux, Router, ErrorBoundary)
 │   ├── App.tsx               # Route definitions, player initialization
-│   ├── components/
-│   │   ├── data/             # Redux slices, store, persistence middleware
-│   │   ├── layout/           # Header, Footer
-│   │   └── ui/               # Reusable UI components
+│   ├── data/                 # Redux slices, store, persistence middleware
+│   ├── layout/               # Header, Footer
+│   │── ui/                   # Reusable UI components
 │   ├── hooks/                # Custom React hooks
 │   ├── pages/                # Route page components
 │   ├── shared/               # Client-only utilities (encryption, constants)
@@ -45,7 +44,7 @@ src/
     ├── main.ts               # Entry: Express app, middleware, routes, vite-express
     ├── config/               # Session config, constants
     ├── controllers/          # Request handlers
-    ├── middleware/            # Auth middleware
+    ├── middleware/           # Auth middleware
     ├── routes/               # Route definitions
     ├── services/             # Business logic (auth verification)
     └── shared/               # Server-only constants

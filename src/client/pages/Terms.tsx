@@ -1,8 +1,8 @@
 import { Box, Button, Heading, Text, VStack } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router';
 import { ROUTES } from '../shared/constants';
-import { PageLayout } from '../components/layout/page-layout';
-import { PageMeta } from '../components/ui/page-meta';
+import { PageLayout } from '../layout/page-layout';
+import { PageMeta } from '../ui/page-meta';
 
 /* eslint-disable-next-line max-lines-per-function */
 const Terms = () => {

@@ -5,6 +5,7 @@ import { useTheme } from 'next-themes';
 import { LuMenu, LuX } from 'react-icons/lu';
 import { ROUTES } from '@/client/shared/constants';
 import { ColorModeToggle } from '../ui/color-mode-toggle';
+import { LanguageSwitcher } from '../ui/language-switcher';
 
 interface NavItem {
   label: string;
@@ -66,10 +67,12 @@ const Header = ({ variant }: { variant: 'public' | 'private' }) => {
 
           <Flex gap={4} align="center" display={{ base: 'none', md: 'flex' }}>
             <NavLinks items={navItems} />
+            <LanguageSwitcher />
             <ColorModeToggle />
           </Flex>
 
           <Flex align="center" display={{ base: 'flex', md: 'none' }}>
+            <LanguageSwitcher />
             <ColorModeToggle />
             <IconButton
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
@@ -92,6 +95,7 @@ const Header = ({ variant }: { variant: 'public' | 'private' }) => {
             display={{ base: 'flex', md: 'none' }}
           >
             <NavLinks items={navItems} onClose={() => { setMobileOpen(false); }} />
+            <LanguageSwitcher />
           </VStack>
         )}
       </Box>

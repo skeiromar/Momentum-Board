@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { type RootState, type AppDispatch } from './components/data/store';
+import { type RootState, type AppDispatch } from './data/store';
 import { useEffect, lazy, Suspense } from 'react';
-import { initPlayer } from './components/data/player-actions';
-import { ErrorPage } from './components/ui/error-page';
-import { LoadingSpinner } from './components/ui/loading-spinner';
-import { ScrollToTop } from './components/ui/scroll-to-top';
+import { initPlayer } from './data/player-actions';
+import { ErrorPage } from './ui/error-page';
+import { LoadingSpinner } from './ui/loading-spinner';
+import { ScrollToTop } from './ui/scroll-to-top';
 import { ROUTES } from './shared/constants';
 import { Routes, Route, BrowserRouter } from 'react-router';
 import Home from './pages/Home';

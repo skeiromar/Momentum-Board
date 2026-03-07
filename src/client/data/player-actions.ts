@@ -1,7 +1,7 @@
 import { createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
 import { decrypt } from '@/client/shared/encryption';
 import { LOCAL_STORAGE_ID, API_PATHS } from '@/client/shared/constants';
-import { DEFAULT_LOCALE, type SupportedLocale } from '@/client/shared/locales';
+import { DEFAULT_LOCALE, type SupportedLocale } from '@/client/shared/i18n';
 import { reportError } from '@/client/shared/error-reporting';
 
 const SCHEMA_VERSION = '1.0.0';

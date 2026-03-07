@@ -1,10 +1,10 @@
 import { useOptimistic } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { type RootState, type AppDispatch } from '../components/data/store';
-import { increment } from '../components/data/player';
+import { type RootState, type AppDispatch } from '../data/store';
+import { increment } from '../data/player';
 import { Box, Button, Heading, Text, VStack } from '@chakra-ui/react';
-import { PageLayout } from '../components/layout/page-layout';
-import { PageMeta } from '../components/ui/page-meta';
+import { PageLayout } from '../layout/page-layout';
+import { PageMeta } from '../ui/page-meta';
 import { useAnnounce } from '../hooks/use-announce';
 
 const Product = () => {

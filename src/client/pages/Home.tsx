@@ -1,9 +1,9 @@
 import { Button, Heading, Text, VStack, Flex, SimpleGrid } from '@chakra-ui/react';
 import { LuShield, LuZap, LuCode } from 'react-icons/lu';
 import { FormattedMessage } from 'react-intl';
-import { PageLayout } from '../components/layout/page-layout';
-import { FeatureCard } from '../components/ui/feature-card';
-import { PageMeta } from '../components/ui/page-meta';
+import { PageLayout } from '../layout/page-layout';
+import { FeatureCard } from '../ui/feature-card';
+import { PageMeta } from '../ui/page-meta';
 import { ROUTES } from '../shared/constants';
 import { Link as RouterLink } from 'react-router';
 
