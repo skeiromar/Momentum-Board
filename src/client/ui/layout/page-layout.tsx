@@ -4,6 +4,7 @@ import { PublicHeader, PrivateHeader } from './header';
 import { Footer } from './footer';
 import { SkipLink } from '../components/skip-link';
 import { LoadingSpinner } from '../components/loading-spinner';
+import { PageTransistion } from '../components/page-transistion';
 
 interface PageLayoutProps {
   variant?: 'public' | 'private';
@@ -25,9 +26,11 @@ export const PageLayout = ({
       <SkipLink />
       <Header />
       <Container as="main" id="main-content" maxW={maxW} py={py}>
-        <Suspense fallback={<LoadingSpinner />}>
-          {children}
-        </Suspense>
+        <PageTransistion>
+          <Suspense fallback={<LoadingSpinner />}>
+            {children}
+          </Suspense>
+        </PageTransistion>
       </Container>
       <Footer />
     </>
