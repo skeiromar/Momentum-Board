@@ -1,4 +1,9 @@
-# Skill: Rebrand
+---
+name: rebrand
+description: Use this immediately after cloning the boilerplate to convert it into a new project identity. Trigger whenever a developer provides a new site title/description and wants boilerplate branding removed from metadata, docs, and shared public/private header branding.
+---
+
+# Rebrand
 
 Use this skill when a developer has cloned the boilerplate and wants to turn it into their own project identity.
 

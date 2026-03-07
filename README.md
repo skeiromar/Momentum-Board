@@ -53,7 +53,8 @@ The reasoning for each item is included below.
 
 ## Skills
 
-- `skills/rebrand.md` - Rebrand the boilerplate into your own project identity using a new site title and description.
+- Skills follow this format: `skills/<skill-name>/SKILL.md` with YAML frontmatter (`name`, `description`) for skill discovery.
+- `skills/rebrand/SKILL.md` - Rebrand the boilerplate into your own project identity using a new site title and description.
 
 ## Getting Started
 
@@ -67,7 +68,7 @@ Use this workflow when you want to turn this repository into your own product in
 2. Remove the existing git history: `rm -rf .git`
 3. Initialize a fresh repository: `git init`
 4. Run the rebrand skill with your new project details:
-   - `Use the skill at skills/rebrand.md with site_title="<Your Project Title>" and site_description="<Your Project Description>".`
+   - `Use the skill at skills/rebrand/SKILL.md with site_title="<Your Project Title>" and site_description="<Your Project Description>".`
 5. Create your first commit in the new repository.
 
 ### Development Setup
