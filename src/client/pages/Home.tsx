@@ -17,10 +17,15 @@ const Home = () => {
       />
       <VStack gap={16} align="stretch">
         <VStack gap={6} textAlign="center">
-          <Heading as="h1" size="4xl" fontWeight="bold" lineHeight="1.2">
+          <Heading
+            as="h1"
+            fontSize={{ base: '2xl', sm: '3xl', md: '4xl', lg: '5xl' }}
+            fontWeight="bold"
+            lineHeight="1.2"
+          >
             <FormattedMessage id="home.title" />
           </Heading>
-          <Text fontSize="xl" color="gray.500" maxW="600px" mx="auto">
+          <Text fontSize={{ base: 'md', md: 'xl' }} color="gray.500" maxW="600px" mx="auto">
             <FormattedMessage id="home.subtitle" />
           </Text>
           <Flex gap={4} pt={2}>
