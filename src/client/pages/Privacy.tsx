@@ -1,12 +1,15 @@
 import { Box, Button, Heading, Text, VStack } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router';
 import { PageLayout } from '../components/layout/page-layout';
+import { PageMeta } from '../components/ui/page-meta';
 
 const Privacy = () => {
   return (
     <PageLayout>
-      <title>Privacy Policy - 2026 Boilerplate</title>
-      <meta name="description" content="Privacy policy for the 2026 Boilerplate application" />
+      <PageMeta
+        title="Privacy Policy - 2026 Boilerplate"
+        description="Privacy policy for the 2026 Boilerplate application"
+      />
       <VStack gap={6} align="stretch">
         <Box>
           <Heading as="h1" size="2xl" mb={4}>

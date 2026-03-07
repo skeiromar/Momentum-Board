@@ -1,6 +1,6 @@
 ---
 name: rebrand
-description: Use this immediately after cloning the boilerplate to convert it into a new project identity. Trigger whenever a developer provides a new site title/description and wants boilerplate branding removed from metadata, docs, and shared public/private header branding.
+description: Use this immediately after cloning the boilerplate to convert it into a new project identity. Trigger whenever a developer provides a new site title/description and wants boilerplate branding removed from centralized metadata (`PageMeta`), docs, and shared public/private header branding.
 ---
 
 # Rebrand
@@ -28,27 +28,42 @@ Required replacements:
 - `<title>`
 - `<meta name="title">`
 - `<meta name="description">`
-- `<meta property="og:site_name">`
-- `<meta property="og:title">`
-- `<meta property="og:description">`
-- `<meta name="twitter:title">`
-- `<meta name="twitter:description">`
-- `<meta name="apple-mobile-web-app-title">`
 
-### 2) `package.json`
+### 2) `src/client/components/ui/page-meta.tsx`
+
+Update centralized metadata defaults used by every page:
+- Any boilerplate-specific constants (author, preview image URL, social handle, keywords, fallback canonical host) that should change for the new project.
+- Ensure the component still receives `title` and `description` and maps them to the full metadata set (Open Graph, Twitter, mobile app tags, canonical URL, and standard meta tags).
+
+### 3) Page metadata calls
+
+Update page-level `PageMeta` calls in:
+- `src/client/pages/Home.tsx`
+- `src/client/pages/About.tsx`
+- `src/client/pages/Login.tsx`
+- `src/client/pages/Product.tsx`
+- `src/client/pages/Privacy.tsx`
+- `src/client/pages/Terms.tsx`
+- `src/client/pages/NotFound.tsx`
+
+Required replacements:
+- Page title values passed to `title`.
+- Page description values passed to `description`.
+
+### 4) `package.json`
 
 Update package metadata:
 - `name`: kebab-case package name that matches the new project title.
 - `description`: use `site_description`.
 
-### 3) `README.md`
+### 5) `README.md`
 
 Update the README so it no longer reads as a boilerplate identity.
 - Replace the H1 title with the new project title.
 - Replace the short description under the H1 with `site_description`.
 - Update opening paragraphs that still brand the repo as "2026 Boilerplate" so they describe the new project.
 
-### 4) Public and private header files
+### 6) Public and private header files
 
 Update the client header branding in:
 - `src/client/components/layout/header.tsx`
@@ -58,11 +73,11 @@ Required replacement:
 
 ## Validation Checklist
 
-- Run `rg "2026 Boilerplate|2026-boilerplate" index.html package.json README.md src/client/components/layout/header.tsx` and verify old branding is removed from these files unless intentionally preserved.
-- Run `rg "<new site title>|<new site description>" index.html package.json README.md src/client/components/layout/header.tsx` to confirm the new branding is present.
+- Run `rg "2026 Boilerplate|2026-boilerplate" index.html package.json README.md src/client/components/layout/header.tsx src/client/components/ui/page-meta.tsx src/client/pages` and verify old branding is removed from these files unless intentionally preserved.
+- Run `rg "<new site title>|<new site description>" index.html package.json README.md src/client/components/layout/header.tsx src/client/components/ui/page-meta.tsx src/client/pages` to confirm the new branding is present.
 - Confirm JSON formatting in `package.json` remains valid.
 
 ## Done Criteria
 
-- `index.html`, `package.json`, `README.md`, and `src/client/components/layout/header.tsx` reflect the rebrand inputs where applicable.
+- `index.html`, `src/client/components/ui/page-meta.tsx`, page-level `PageMeta` calls, `package.json`, `README.md`, and `src/client/components/layout/header.tsx` reflect the rebrand inputs where applicable.
 - Project metadata no longer presents itself as the generic boilerplate identity in those files.

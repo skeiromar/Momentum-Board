@@ -1,13 +1,16 @@
 import { Box, Button, Heading, Text, VStack } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router';
 import { PageLayout } from '../components/layout/page-layout';
+import { PageMeta } from '../components/ui/page-meta';
 
 /* eslint-disable-next-line max-lines-per-function */
 const Terms = () => {
   return (
     <PageLayout>
-      <title>Terms of Service - 2026 Boilerplate</title>
-      <meta name="description" content="Terms of service for the 2026 Boilerplate application" />
+      <PageMeta
+        title="Terms of Service - 2026 Boilerplate"
+        description="Terms of service for the 2026 Boilerplate application"
+      />
       <VStack gap={6} align="stretch">
         <Box>
           <Heading as="h1" size="2xl" mb={4}>

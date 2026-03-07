@@ -4,6 +4,7 @@ import { type RootState, type AppDispatch } from '../components/data/store';
 import { increment } from '../components/data/player';
 import { Box, Button, Heading, Text, VStack } from '@chakra-ui/react';
 import { PageLayout } from '../components/layout/page-layout';
+import { PageMeta } from '../components/ui/page-meta';
 import { useAnnounce } from '../hooks/use-announce';
 
 const Product = () => {
@@ -20,8 +21,10 @@ const Product = () => {
 
   return (
     <PageLayout variant="private">
-      <title>Product - 2026 Boilerplate</title>
-      <meta name="description" content="Product dashboard for the 2026 Boilerplate application" />
+      <PageMeta
+        title="Product - 2026 Boilerplate"
+        description="Product dashboard for the 2026 Boilerplate application"
+      />
       <VStack gap={6} align="stretch">
         <Box>
           <Heading as="h1" size="2xl" mb={2}>

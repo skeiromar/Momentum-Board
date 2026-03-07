@@ -3,13 +3,16 @@ import { LuShield, LuZap, LuCode } from 'react-icons/lu';
 import { FormattedMessage } from 'react-intl';
 import { PageLayout } from '../components/layout/page-layout';
 import { FeatureCard } from '../components/ui/feature-card';
+import { PageMeta } from '../components/ui/page-meta';
 import { Link as RouterLink } from 'react-router';
 
 const Home = () => {
   return (
     <PageLayout maxW="container.lg" py={16}>
-      <title>2026 Boilerplate</title>
-      <meta name="description" content="A modern, full-stack web application starter kit with TypeScript, React, and Node.js" />
+      <PageMeta
+        title="2026 Boilerplate"
+        description="A modern, full-stack web application starter kit with TypeScript, React, and Node.js"
+      />
       <VStack gap={16} align="stretch">
         <VStack gap={6} textAlign="center">
           <Heading as="h1" size="4xl" fontWeight="bold" lineHeight="1.2">
