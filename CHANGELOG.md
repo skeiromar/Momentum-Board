@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 + Added Terms of service and Privacy policy.
 + Added AI-friendly files such as AGENTS.md & ARCHITECTURE.md.
 + Added a new `skills/` folder using `skills/<skill-name>/SKILL.md` format, including `skills/rebrand/SKILL.md` for rebranding title/description metadata across `index.html`, `package.json`, `README.md`, and header branding.
++ Added `skills/docx/SKILL.md` for creating, reading, editing, and manipulating Word (`.docx`) files.
 + Added React 19 meta tags.
 + Added ScrollToTop functionality on route change.
 + Improved Accessibility: skip to content link, useId() to avoid form field id collisions, and useAnnounce hook for aria-live.

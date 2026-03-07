@@ -55,6 +55,7 @@ The reasoning for each item is included below.
 
 - Skills follow this format: `skills/<skill-name>/SKILL.md` with YAML frontmatter (`name`, `description`) for skill discovery.
 - `skills/rebrand/SKILL.md` - Rebrand the boilerplate into your own project identity using a new site title and description.
+- `skills/docx/SKILL.md` - Create, read, edit, or manipulate Word documents (`.docx`), including reports, memos, and letters.
 
 ## Getting Started
 
