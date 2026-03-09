@@ -9,7 +9,7 @@ export const AnimatedButton = ({ children, ...buttonProps }: ButtonProps) => {
 
   return (
     <motion.div
-      style={{ display: 'inline-flex' }}
+      style={{ display: 'inline-flex', alignSelf: 'flex-start' }}
       whileTap={isDisabled ? undefined : TAP_ANIMATION}
       transition={isDisabled ? undefined : TAP_TRANSITION}
     >

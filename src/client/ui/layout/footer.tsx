@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Link } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router';
 import { useTheme } from 'next-themes';
 import { FormattedMessage } from 'react-intl';
@@ -18,14 +18,28 @@ export const Footer = () => {
         </Text>
         <Flex gap={4}>
           <RouterLink to={ROUTES.PRIVACY}>
-            <Link fontSize="sm" color={textColor} _hover={{ color: hoverColor }}>
+            <Text
+              as="span"
+              fontSize="sm"
+              color={textColor}
+              _hover={{ color: hoverColor }}
+              cursor="pointer"
+              textDecoration="underline"
+            >
               <FormattedMessage id="footer.privacy" />
-            </Link>
+            </Text>
           </RouterLink>
           <RouterLink to={ROUTES.TERMS}>
-            <Link fontSize="sm" color={textColor} _hover={{ color: hoverColor }}>
+            <Text
+              as="span"
+              fontSize="sm"
+              color={textColor}
+              _hover={{ color: hoverColor }}
+              cursor="pointer"
+              textDecoration="underline"
+            >
               <FormattedMessage id="footer.terms" />
-            </Link>
+            </Text>
           </RouterLink>
         </Flex>
       </Flex>
