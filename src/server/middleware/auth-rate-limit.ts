@@ -25,7 +25,6 @@ const getUsernameRateLimitKey = (username: unknown): string => {
   if (typeof username !== 'string') {
     return 'unknown-user';
   }
-
   const normalized = username.trim().toLowerCase();
   return normalized.length > 0 ? normalized : 'unknown-user';
 };
