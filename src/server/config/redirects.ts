@@ -15,13 +15,13 @@ const normalizeRoutePath = (routePath: string): string => {
 
 const REDIRECT_RULES: readonly RedirectRule[] = [
   {
-    from: '/privacy-policy',
-    to: '/privacy',
+    from: '/privacy',
+    to: '/policies',
     status: 301,
   },
   {
-    from: '/terms-of-service',
-    to: '/terms',
+    from: '/terms',
+    to: '/policies',
     status: 301,
   },
 ];

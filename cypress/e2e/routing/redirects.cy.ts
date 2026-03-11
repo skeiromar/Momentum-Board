@@ -6,7 +6,7 @@ const expectRedirect = (fromPath: string, toPath: string, expectedHeading: strin
 
 describe('Legacy redirects', () => {
   it('redirects old policy URLs to current routes', () => {
-    expectRedirect('/privacy-policy', '/privacy', 'Privacy Policy');
-    expectRedirect('/terms-of-service', '/terms', 'Terms of Service');
+    expectRedirect('/privacy', '/policies', 'Policy Writing Guide');
+    expectRedirect('/terms', '/policies', 'Policy Writing Guide');
   });
 });

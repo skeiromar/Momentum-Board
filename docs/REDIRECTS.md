@@ -12,8 +12,8 @@ Use redirects when an old URL should continue working after a page move or route
 - Redirects preserve query strings.
 - Redirect status codes are explicit per rule (`301`, `302`, `307`, `308`).
 - Legacy aliases currently included:
-  - `/privacy-policy` → `/privacy` (`301`)
-  - `/terms-of-service` → `/terms` (`301`)
+  - `/privacy` → `/policies` (`301`)
+  - `/terms` → `/policies` (`301`)
 
 ## Adding a redirect
 
