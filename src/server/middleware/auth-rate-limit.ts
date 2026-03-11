@@ -21,11 +21,22 @@ const loginMaxAttempts = parsePositiveInt(
   DEFAULT_LOGIN_MAX_ATTEMPTS
 );
 
+const getUsernameRateLimitKey = (username: unknown): string => {
+  if (typeof username !== 'string') {
+    return 'unknown-user';
+  }
+
+  const normalized = username.trim().toLowerCase();
+  return normalized.length > 0 ? normalized : 'unknown-user';
+};
+
 export const loginRateLimiter = rateLimit({
   windowMs: loginWindowMs,
   limit: loginMaxAttempts,
   standardHeaders: 'draft-8',
   legacyHeaders: false,
+  // Include attempted username in the key to reduce lockout blast-radius.
+  keyGenerator: (req) => `${req.ip ?? 'unknown-ip'}:${getUsernameRateLimitKey((req.body as { username?: unknown; }).username)}`,
   skipSuccessfulRequests: true,
   requestWasSuccessful: (_req, res) => {
     return res.statusCode === 302 && res.getHeader('location') === ROUTES.PRODUCT;
