@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added feature-flag starter support with env defaults (`VITE_FEATURE_FLAGS`) and runtime hook-based overrides (`useFeatureFlag`).
+- Added `docs/FEATURE_FLAGS.md` to document feature-flag setup and usage.
 - Added auth backing starter profiles (`AUTH_PROFILE=local|supabase|postgres`) with setup guidance in `docs/AUTH_PROFILES.md`.
 - Added shared `LoadingFallback` and `BackHomeCta` UI components to reduce repeated loading/CTA markup.
 - Added `skills/migrate-design-system-to-shadcn/SKILL.md` to guide full Chakra-to-shadcn migration with explicit removal criteria.
