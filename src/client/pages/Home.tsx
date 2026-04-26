@@ -10,7 +10,6 @@ import {
   CategoryManager,
   HeaderSection,
   MomentumCardGrid,
-  StoragePreview,
 } from '../features/momentum/components';
 import {
   createCategoryId,
@@ -35,7 +34,7 @@ const buildDateCounts = (
 ) => Object.fromEntries(
   Object.entries({
     ...counts,
-    ...(nextCount > 0 ? { [categoryId]: nextCount } : {}),
+    [categoryId]: nextCount,
   }).filter(([, count]) => count > 0),
 );
 
@@ -175,7 +174,7 @@ const Home = () => {
             updateStarCount={updateStarCount}
           />
 
-          <SimpleGrid columns={{ base: 1, xl: 2 }} gap={5}>
+          <SimpleGrid columns={1} gap={5}>
             <CategoryManager
               categories={boardState.categories}
               categoryError={categoryError}
@@ -190,11 +189,6 @@ const Home = () => {
                   setCategoryError(null);
                 }
               }}
-            />
-
-            <StoragePreview
-              selectedDate={selectedDate}
-              selectedDateCounts={selectedDateCounts}
             />
           </SimpleGrid>
         </Flex>

@@ -115,8 +115,13 @@ export const HeaderSection = ({
         </Text>
       </Box>
 
-      <SimpleGrid columns={{ base: 1, sm: 3 }} gap={3} minChildWidth="140px" w={{ base: 'full', lg: 'auto' }}>
-        <Box {...panelStyles} p={4}>
+      <Flex
+        direction={{ base: 'column', sm: 'row' }}
+        gap={3}
+        w={{ base: 'full', lg: '470px' }}
+        align="stretch"
+      >
+        <Box {...panelStyles} p={4} flex="1">
           <Text color="var(--board-muted)" fontSize="xs" textTransform="uppercase" letterSpacing="0.18em">
             Active Day
           </Text>
@@ -135,7 +140,7 @@ export const HeaderSection = ({
           </Flex>
           <Text color="var(--board-soft)">{getVisibleStarText(totalStars)}</Text>
         </Box>
-        <Box {...panelStyles} p={4}>
+        <Box {...panelStyles} p={4} flex="1">
           <Text color="var(--board-muted)" fontSize="xs" textTransform="uppercase" letterSpacing="0.18em">
             Tracked Days
           </Text>
@@ -144,7 +149,7 @@ export const HeaderSection = ({
           </Text>
           <Text color="var(--board-soft)">Filed in localStorage</Text>
         </Box>
-      </SimpleGrid>
+      </Flex>
     </Flex>
 
     <Box {...panelStyles} p={{ base: 4, md: 5 }}>
@@ -402,37 +407,5 @@ export const CategoryManager = ({
         );
       })}
     </Flex>
-  </Box>
-);
-
-export const StoragePreview = ({
-  selectedDate,
-  selectedDateCounts,
-}: {
-  selectedDate: string;
-  selectedDateCounts: Record<string, number>;
-}) => (
-  <Box {...panelStyles} p={{ base: 4, md: 5 }}>
-    <Heading as="h2" size="lg">
-      Storage Preview
-    </Heading>
-    <Text mt={2} color="var(--board-soft)">
-      Counts are stored under the selected date key. Midnight does not require a job or reset script; the board simply points at the next date.
-    </Text>
-
-    <Box
-      as="pre"
-      mt={5}
-      p={4}
-      borderRadius="16px"
-      bg="rgba(255, 252, 245, 0.95)"
-      border="1px solid rgba(123,110,88,0.16)"
-      fontSize="sm"
-      lineHeight="1.7"
-      overflowX="auto"
-      color="var(--board-code)"
-    >
-      {JSON.stringify({ [selectedDate]: selectedDateCounts }, null, 2)}
-    </Box>
   </Box>
 );
