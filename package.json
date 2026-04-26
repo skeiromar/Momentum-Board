@@ -1,13 +1,13 @@
 {
-  "name": "2026-boilerplate",
-  "description": "a local-first web app boilerplate for 2026",
-  "author": "BishopZ",
+  "name": "momentum-board",
+  "description": "a local-first daily momentum board for star-based progress tracking",
+  "author": "Omar",
   "private": true,
   "version": "1.2.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bishopz/2026-boilerplate"
+    "url": "https://github.com/skeiromar/Momentum-Board"
   },
   "type": "module",
   "scripts": {

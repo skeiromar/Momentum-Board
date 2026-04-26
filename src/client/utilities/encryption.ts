@@ -18,6 +18,12 @@ const textDecoder = new TextDecoder();
 
 const getSubtleCrypto = () => globalThis.crypto.subtle;
 
+const toOwnedBytes = (bytes: Uint8Array): Uint8Array<ArrayBuffer> => {
+  const copy = new Uint8Array(bytes.length);
+  copy.set(bytes);
+  return copy;
+};
+
 const bytesToBase64 = (bytes: Uint8Array): string => {
   return btoa(String.fromCharCode(...bytes));
 };
@@ -28,6 +34,7 @@ const base64ToBytes = (value: string): Uint8Array => {
 
 const deriveAesKey = async (secret: string, salt: Uint8Array): Promise<CryptoKey> => {
   const subtle = getSubtleCrypto();
+  const normalizedSalt = toOwnedBytes(salt);
   const keyMaterial = await subtle.importKey(
     'raw',
     textEncoder.encode(secret),
@@ -39,7 +46,7 @@ const deriveAesKey = async (secret: string, salt: Uint8Array): Promise<CryptoKey
   return subtle.deriveKey(
     {
       name: 'PBKDF2',
-      salt,
+      salt: normalizedSalt,
       iterations: PBKDF2_ITERATIONS,
       hash: 'SHA-256',
     },
@@ -56,8 +63,8 @@ export const encrypt = async (text: string, key: string): Promise<string | null>
   try {
     const subtle = getSubtleCrypto();
 
-    const salt = globalThis.crypto.getRandomValues(new Uint8Array(SALT_LENGTH));
-    const iv = globalThis.crypto.getRandomValues(new Uint8Array(IV_LENGTH));
+    const salt = toOwnedBytes(globalThis.crypto.getRandomValues(new Uint8Array(SALT_LENGTH)));
+    const iv = toOwnedBytes(globalThis.crypto.getRandomValues(new Uint8Array(IV_LENGTH)));
     const aesKey = await deriveAesKey(key, salt);
 
     const encryptedBuffer = await subtle.encrypt(
@@ -97,9 +104,9 @@ export const decrypt = async (text: string, key: string): Promise<string> => {
       return '';
     }
 
-    const salt = base64ToBytes(payload.salt);
-    const iv = base64ToBytes(payload.initializationVector);
-    const encryptedData = base64ToBytes(payload.ciphertext);
+    const salt = toOwnedBytes(base64ToBytes(payload.salt));
+    const iv = toOwnedBytes(base64ToBytes(payload.initializationVector));
+    const encryptedData = toOwnedBytes(base64ToBytes(payload.ciphertext));
     const aesKey = await deriveAesKey(key, salt);
     const decryptedBuffer = await subtle.decrypt(
       { name: 'AES-GCM', iv },

@@ -1,22 +1,64 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap');
+
+:root {
+  --font-sans: 'Patrick Hand', 'Comic Sans MS', cursive;
+  --font-accent: 'Source Serif 4', Georgia, serif;
+  --board-bg: #f5efdf;
+  --board-ink: #203149;
+  --board-soft: #5f6980;
+  --board-muted: #8c7c60;
+  --board-code: #28496d;
+  --board-amber: #f0c85c;
+  --board-paper: rgba(255, 251, 242, 0.92);
+  --board-paper-strong: #fffdf8;
+  --board-line: rgba(102, 150, 224, 0.26);
+  --board-margin: rgba(219, 120, 120, 0.38);
+  --board-shadow: rgba(83, 62, 31, 0.16);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+html {
+  background: var(--board-bg);
+}
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background:
+    linear-gradient(90deg, transparent 0, transparent 74px, var(--board-margin) 74px, var(--board-margin) 77px, transparent 77px),
+    repeating-linear-gradient(180deg, transparent 0, transparent 33px, var(--board-line) 33px, var(--board-line) 35px),
+    linear-gradient(180deg, #faf5e9 0%, #f3ecd8 100%);
+  color: var(--board-ink);
 }
 
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(240, 200, 92, 0.4);
 }
 
 /* WCAG 2.5.5: minimum 44x44px touch targets for coarse pointers */
